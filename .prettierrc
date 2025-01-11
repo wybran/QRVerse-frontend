@@ -1,14 +1,10 @@
 {
   "plugins": [
-    "@trivago/prettier-plugin-sort-imports"
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-organize-imports"
   ],
   "importOrderSeparation": true,
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^[*/]$",
-    "^@ui/(.*)$",
-    "^[./]"
-  ],
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^[*/]$", "^@ui/(.*)$", "^[./]"],
   "bracketSpacing": true,
   "bracketSameLine": true,
   "printWidth": 80,
