@@ -21,8 +21,8 @@ import { redirectToGoogleLogin } from './utils/Axios';
 
 const queryClient = new QueryClient({
   queryCache: new QueryCache({
-    onError: (error: any) => {
-      if (error?.response?.status === 401) redirectToGoogleLogin();
+    onError: () => {
+      redirectToGoogleLogin();
     }
   })
 });

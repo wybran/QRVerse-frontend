@@ -1,3 +1,15 @@
 {
-    "Welcome to React": "Witaj w React hihih"
+  "QR Code Generator": "Generator Kodów QR",
+  "Enter a URL": "Wpisz URL",
+  "Generate QR Code": "Wygeneruj Kod QR",
+  "Download QR Code": "Pobierz Kod QR",
+  "Download PDF": "Pobierz PDF",
+  "Background Color": "Kolor tła",
+  "Foreground Color": "Kolor pierwszoplanowy",
+  "Error Correction Level": "Poziom korekcji błędów",
+  "Low": "Niski",
+  "Medium": "Średni",
+  "Quartile": "Ćwiartkowy",
+  "High": "Wysoki",
+  "QR Code": "Kod QR"
 }

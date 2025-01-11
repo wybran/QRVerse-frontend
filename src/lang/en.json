@@ -1,3 +1,15 @@
 {
-  "Welcome to React": "Welcome to React and react-i18next"
+  "QR Code Generator": "QR Code Generator",
+  "Enter a URL": "Enter a URL",
+  "Generate QR Code": "Generate QR Code",
+  "Download QR Code": "Download QR Code",
+  "Download PDF": "Download PDF",
+  "Background Color": "Background Color",
+  "Foreground Color": "Foreground Color",
+  "Error Correction Level": "Error Correction Level",
+  "Low": "Low",
+  "Medium": "Medium",
+  "Quartile": "Quartile",
+  "High": "High",
+  "QR Code": "QR Code"
 }
