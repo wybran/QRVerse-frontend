@@ -4,7 +4,7 @@ import axios from 'axios';
 if (import.meta.env.MODE === 'development') {
   axios.defaults.baseURL = 'http://localhost:8080/api';
 } else {
-  axios.defaults.baseURL = 'https://qr.wybran.dev/api';
+  axios.defaults.baseURL = 'https://api-qr.wybran.dev/api';
 }
 
 axios.defaults.maxRedirects = 0;
