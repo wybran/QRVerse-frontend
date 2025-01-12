@@ -2,12 +2,14 @@ import { useQRCode } from '@/hooks/useQrCode';
 import { useQRCodes } from '@/hooks/useQrCodes';
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Route = createFileRoute('/account')({
   component: RouteComponent
 });
 
 function RouteComponent() {
+  const { t } = useTranslation();
   const { qrCodes } = useQRCode();
   const { updateQRCode, deleteQRCode } = useQRCodes();
 
@@ -38,18 +40,18 @@ function RouteComponent() {
     const frontUrl = window.location.origin;
     const fullLink = `${frontUrl}/redirect/${uuid}`;
     navigator.clipboard.writeText(fullLink);
-  }
+  };
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">QR Codes</h2>
+      <h2 className="text-2xl font-bold mb-4">{t('QR Codes')}</h2>
       <table className="table-auto w-full shadow-md rounded-lg">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-left">Link</th>
-            <th className="px-4 py-2 text-left">Password protected</th>
-            <th className="px-4 py-2 text-left">Click count</th>
-            <th className="px-4 py-2 text-left">Actions</th>
+            <th className="px-4 py-2 text-left">{t('Link')}</th>
+            <th className="px-4 py-2 text-left">{t('Password protected')}</th>
+            <th className="px-4 py-2 text-left">{t('Click count')}</th>
+            <th className="px-4 py-2 text-left">{t('Actions')}</th>
           </tr>
         </thead>
         <tbody>
@@ -75,12 +77,12 @@ function RouteComponent() {
                     <button
                       onClick={() => handleUpdate(qrCode.uuid)}
                       className="bg-blue-500 text-white px-3 py-1 rounded mr-2 hover:bg-blue-600">
-                      {updateQRCode.isPending ? 'Saving...' : 'Save'}
+                      {updateQRCode.isPending ? t('Saving') : t('Save')}
                     </button>
                     <button
                       onClick={() => setEditQrCode(null)}
                       className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600">
-                      Cancel
+                      {t('Cancel')}
                     </button>
                   </>
                 ) : (
@@ -91,17 +93,17 @@ function RouteComponent() {
                         setUpdatedLink(qrCode.link);
                       }}
                       className="bg-yellow-500 text-white px-3 py-1 rounded mr-2 hover:bg-yellow-600">
-                      Edit
+                      {t('Edit')}
                     </button>
                     <button
                       onClick={() => copyLink(qrCode.uuid)}
                       className="bg-green-500 text-white px-3 py-1 rounded mr-2 hover:bg-green-600">
-                      Copy Link
+                      {t('Copy Link')}
                     </button>
                     <button
                       onClick={() => handleDelete(qrCode.uuid)}
                       className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-                      {deleteQRCode.isPending ? 'Deleting...' : 'Delete'}
+                      {deleteQRCode.isPending ? t('Deleting') : t('Delete')}
                     </button>
                   </>
                 )}

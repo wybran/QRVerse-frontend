@@ -21,5 +21,15 @@
   "Dynamic": "Dynamiczny",
   "Enter password if you want to protect the link": "Wprowadź hasło, jeśli chcesz zabezpieczyć link",
   "Enter a password": "Wprowadź hasło",
-  "Note: Only for preview! Generate dynamic QR code to download it.": "Uwaga: Tylko podgląd! Wygeneruj dynamiczny kod QR, aby go pobrać."
+  "Note: Only for preview! Generate dynamic QR code to download it.": "Uwaga: Tylko podgląd! Wygeneruj dynamiczny kod QR, aby go pobrać.",
+  "Password protected": "Zabezpieczone hasłem",
+  "Click count": "Liczba kliknięć",
+  "Actions": "Akcje",
+  "Saving": "Zapisywanie",
+  "Save": "Zapisz",
+  "Cancel": "Anuluj",
+  "Edit": "Edytuj",
+  "Copy Link": "Kopiuj link",
+  "Deleting": "Usuwanie",
+  "Delete": "Usuń"
 }
