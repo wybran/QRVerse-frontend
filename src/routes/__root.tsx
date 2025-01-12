@@ -13,10 +13,14 @@ export const Route = createRootRoute({
       location.pathname === '/' || location.pathname.startsWith('/redirect');
 
     if (!user && !isRootPath) {
-      const response = await Axios.get(ME());
-      if (response.status === 200) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-      } else if (response.status === 401) {
+      try {
+        const response = await Axios.get(ME());
+        if (response.status === 200) {
+          localStorage.setItem('user', JSON.stringify(response.data));
+        } else if (response.status === 401) {
+          redirectToGoogleLogin();
+        }
+      } catch (error) {
         redirectToGoogleLogin();
       }
     }
@@ -35,14 +39,12 @@ function RootComponent() {
           <div className="flex gap-6">
             <Link
               to="/"
-              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold"
-            >
+              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold">
               QR Code Generator
             </Link>
             <Link
               to="/account"
-              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold"
-            >
+              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold">
               {t('Account')}
             </Link>
           </div>
