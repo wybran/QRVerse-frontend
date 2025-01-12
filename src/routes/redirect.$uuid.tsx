@@ -61,21 +61,19 @@ function RouteComponent() {
           </h2>
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-600 mb-2"
-          >
+            className="block text-sm font-medium text-gray-600 mb-2">
             {t('password')}
           </label>
           <input
             id="password"
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent mb-4 text-gray-800"
           />
           <button
             onClick={fetchQRCodeRedirectLink}
-            className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
+            className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
             {t('submit')}
           </button>
         </div>
