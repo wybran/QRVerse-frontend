@@ -4,7 +4,7 @@ import LoadingPage from '@/pages/LoadingPage';
 import NotFound from '@/pages/NotFound';
 import { Axios, redirectToGoogleLogin } from '@/utils/Axios';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { useTranslation } from 'react-i18next';
 
 export const Route = createRootRoute({
   loader: async ({ location }) => {
@@ -27,20 +27,35 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const { t } = useTranslation();
   return (
     <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>{' '}
-        <Link to="/about" className="[&.active]:font-bold">
-          Account
-        </Link>
-        <ModeToggle />
-      </div>
+      <nav className="text-white shadow-md">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex gap-6">
+            <Link
+              to="/"
+              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold"
+            >
+              QR Code Generator
+            </Link>
+            <Link
+              to="/account"
+              className="hover:text-blue-400 transition duration-200 [&.active]:font-bold"
+            >
+              {t('Account')}
+            </Link>
+          </div>
+
+          <div>
+            <ModeToggle />
+          </div>
+        </div>
+      </nav>
       <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
+      <div className="p-4">
+        <Outlet />
+      </div>
     </>
   );
 }

@@ -16,5 +16,6 @@
   "qrCodeNotFound": "QR Code not found",
   "enterPassword": "Enter Password to Access Link",
   "password": "Password",
-  "submit": "Submit"
+  "submit": "Submit",
+  "Account": "Account"
 }

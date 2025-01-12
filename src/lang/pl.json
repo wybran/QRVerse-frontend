@@ -16,5 +16,6 @@
   "qrCodeNotFound": "Nie znaleziono kodu QR",
   "enterPassword": "Wprowadź hasło, aby uzyskać dostęp do linku",
   "password": "Hasło",
-  "submit": "Zatwierdź"
+  "submit": "Zatwierdź",
+  "Account": "Konto"
 }

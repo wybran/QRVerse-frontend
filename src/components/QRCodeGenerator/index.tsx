@@ -62,13 +62,12 @@ export const QrCodeGenerator = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-800">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-gray-900">
           {t('QR Code Generator')}
         </h1>
         <div className="flex flex-col gap-4">
-          {/* Input Section */}
           <div className="flex gap-2">
             <input
               type="text"
@@ -84,7 +83,6 @@ export const QrCodeGenerator = () => {
             </button>
           </div>
 
-          {/* QR Code Settings */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <label className="text-gray-700">{t('Background Color')}:</label>
@@ -120,7 +118,6 @@ export const QrCodeGenerator = () => {
             </div>
           </div>
 
-          {/* QR Code and Download Section */}
           {qrIsVisible && (
             <div className="flex flex-col items-center gap-4 mt-6">
               <div

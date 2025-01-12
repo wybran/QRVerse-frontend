@@ -1,12 +1,12 @@
-import { useQRCodes } from '@/hooks/useQrCode';
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { useQRCodes } from '@/hooks/useQrCode'
+import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createLazyFileRoute('/about')({
+export const Route = createFileRoute('/account')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const { qrCodes } = useQRCodes();
+  const { qrCodes } = useQRCodes()
 
   return (
     <div>
@@ -17,5 +17,5 @@ function RouteComponent() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

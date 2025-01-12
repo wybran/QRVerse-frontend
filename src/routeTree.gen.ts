@@ -8,25 +8,20 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as AccountImport } from './routes/account'
 import { Route as IndexImport } from './routes/index'
 import { Route as RedirectUuidImport } from './routes/redirect.$uuid'
 
-// Create Virtual Routes
-
-const AboutLazyImport = createFileRoute('/about')()
-
 // Create/Update Routes
 
-const AboutLazyRoute = AboutLazyImport.update({
-  id: '/about',
-  path: '/about',
+const AccountRoute = AccountImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -51,11 +46,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutLazyImport
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountImport
       parentRoute: typeof rootRoute
     }
     '/redirect/$uuid': {
@@ -72,41 +67,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutLazyRoute
+  '/account': typeof AccountRoute
   '/redirect/$uuid': typeof RedirectUuidRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutLazyRoute
+  '/account': typeof AccountRoute
   '/redirect/$uuid': typeof RedirectUuidRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/about': typeof AboutLazyRoute
+  '/account': typeof AccountRoute
   '/redirect/$uuid': typeof RedirectUuidRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/redirect/$uuid'
+  fullPaths: '/' | '/account' | '/redirect/$uuid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/redirect/$uuid'
-  id: '__root__' | '/' | '/about' | '/redirect/$uuid'
+  to: '/' | '/account' | '/redirect/$uuid'
+  id: '__root__' | '/' | '/account' | '/redirect/$uuid'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutLazyRoute: typeof AboutLazyRoute
+  AccountRoute: typeof AccountRoute
   RedirectUuidRoute: typeof RedirectUuidRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutLazyRoute: AboutLazyRoute,
+  AccountRoute: AccountRoute,
   RedirectUuidRoute: RedirectUuidRoute,
 }
 
@@ -121,15 +116,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about",
+        "/account",
         "/redirect/$uuid"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.lazy.tsx"
+    "/account": {
+      "filePath": "account.tsx"
     },
     "/redirect/$uuid": {
       "filePath": "redirect.$uuid.tsx"
