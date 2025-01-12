@@ -1,4 +1,5 @@
-import { useQRCodes } from '@/hooks/useQrCode';
+import { useQRCode } from '@/hooks/useQrCode';
+import { useQRCodes } from '@/hooks/useQrCodes';
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 
@@ -7,7 +8,8 @@ export const Route = createFileRoute('/account')({
 });
 
 function RouteComponent() {
-  const { qrCodes, updateQRCode, deleteQRCode } = useQRCodes();
+  const { qrCodes } = useQRCode();
+  const { updateQRCode, deleteQRCode } = useQRCodes();
 
   const [editQrCode, setEditQrCode] = useState<string | null>(null);
   const [updatedLink, setUpdatedLink] = useState('');

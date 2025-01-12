@@ -8,9 +8,9 @@ const NotFound = () => {
       <h4 className="text-lg dela-gothic">
         Sorry, we couldn't find what you're looking for.
       </h4>
-      <Link to="/home" className="underline">
+      <Link to="/" className="underline">
         <Button>
-          Go back to <pre>/home</pre>
+          Go back
         </Button>
       </Link>
     </div>

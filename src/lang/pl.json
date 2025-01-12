@@ -17,5 +17,9 @@
   "enterPassword": "Wprowadź hasło, aby uzyskać dostęp do linku",
   "password": "Hasło",
   "submit": "Zatwierdź",
-  "Account": "Konto"
+  "Account": "Konto",
+  "Dynamic": "Dynamiczny",
+  "Enter password if you want to protect the link": "Wprowadź hasło, jeśli chcesz zabezpieczyć link",
+  "Enter a password": "Wprowadź hasło",
+  "Note: Only for preview! Generate dynamic QR code to download it.": "Uwaga: Tylko podgląd! Wygeneruj dynamiczny kod QR, aby go pobrać."
 }

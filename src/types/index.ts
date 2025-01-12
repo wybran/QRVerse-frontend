@@ -7,3 +7,8 @@ export interface QRCode {
   clickCount: number;
   isProtected: boolean;
 }
+
+export interface QrCodeRequest {
+  link: string;
+  password?: string;
+}
