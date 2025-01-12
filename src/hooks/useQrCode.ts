@@ -1,7 +1,10 @@
 import { QR_CODES } from '@/config/URLS';
 import { QRCode } from '@/types';
 import { Axios, catchError } from '@/utils/Axios';
-import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
+import {
+  queryOptions,
+  useSuspenseQuery
+} from '@tanstack/react-query';
 
 export const useQRCodes = () => {
   const {

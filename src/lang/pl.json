@@ -11,5 +11,10 @@
   "Medium": "Średni",
   "Quartile": "Ćwiartkowy",
   "High": "Wysoki",
-  "QR Code": "Kod QR"
+  "QR Code": "Kod QR",
+  "loading": "Ładowanie...",
+  "qrCodeNotFound": "Nie znaleziono kodu QR",
+  "enterPassword": "Wprowadź hasło, aby uzyskać dostęp do linku",
+  "password": "Hasło",
+  "submit": "Zatwierdź"
 }

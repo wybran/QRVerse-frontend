@@ -9,18 +9,14 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 export const Route = createRootRoute({
   loader: async ({ location }) => {
     const user = localStorage.getItem('user');
-    const isRootPath = location.pathname === '/';
+    const isRootPath =
+      location.pathname === '/' || location.pathname.startsWith('/redirect');
 
     if (!user && !isRootPath) {
-      try {
-        const response = await Axios.get(ME());
-        if (response.status === 200) {
-          localStorage.setItem('user', JSON.stringify(response.data));
-        } else {
-          redirectToGoogleLogin();
-        }
-      } catch (error) {
-        console.error(error);
+      const response = await Axios.get(ME());
+      if (response.status === 200) {
+        localStorage.setItem('user', JSON.stringify(response.data));
+      } else if (response.status === 401) {
         redirectToGoogleLogin();
       }
     }
@@ -40,7 +36,6 @@ function RootComponent() {
         <Link to="/about" className="[&.active]:font-bold">
           Account
         </Link>
-
         <ModeToggle />
       </div>
       <hr />

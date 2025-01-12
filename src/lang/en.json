@@ -11,5 +11,10 @@
   "Medium": "Medium",
   "Quartile": "Quartile",
   "High": "High",
-  "QR Code": "QR Code"
+  "QR Code": "QR Code",
+  "loading": "Loading...",
+  "qrCodeNotFound": "QR Code not found",
+  "enterPassword": "Enter Password to Access Link",
+  "password": "Password",
+  "submit": "Submit"
 }

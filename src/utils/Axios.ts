@@ -18,10 +18,16 @@ export const redirectToGoogleLogin = () => {
   window.location.href = `${axios.defaults.baseURL}${GOOGLE_LOGIN()}`;
 };
 
-export const catchError = <T>(
+export const catchError = async <T>(
   promise: Promise<T>
-): Promise<[undefined, T] | [Error]> => {
-  return promise
-    .then(data => [undefined, data] as [undefined, T])
-    .catch(error => [error]);
+): Promise<[undefined, T] | [Error, number?]> => {
+  try {
+    const data = await promise;
+    return [undefined, data];
+  } catch (error: any) {
+    if (error.response) {
+      return [error, error.response.status];
+    }
+    return [error];
+  }
 };
